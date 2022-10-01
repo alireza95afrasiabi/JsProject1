@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        main{
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(90deg, purple, darkblue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        }
+        main>h1{
+            color: white;
+            font-size: 30px;
+            width: fit-content;
+            /* border-right: 1px solid white; */
+            /* animation: cheshmak .4s ease-in-out infinite alternate; */
+        }
+        /* @keyframes cheshmak {
+            to{
+                border-right: 1px solid rgba(255, 255, 255, 0);
+            }
+        } */
+
+    </style>
+</head>
+<body>
+    <main>
+        <h1 id="_h1"></h1>
+    </main>
+</body>
+<script>
+    
+    let _func = setInterval(_print, 400)
+
+    let _prompt = prompt('enter your name : ')
+    let i = 1
+    let _tarikh = new Date()
+
+    function _print(){
+        if(i <= _prompt.length){
+            document.getElementById('_h1').innerHTML = 'Hello Dear ' + _prompt.substring(0, i) + ', today is ' + _tarikh.toLocaleDateString() 
+            i++
+        }else(
+            clearInterval(_func)
+        )
+    }
+
+</script>
+</html>
